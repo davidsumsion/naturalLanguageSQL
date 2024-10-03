@@ -2,6 +2,7 @@
 __________
 My project model models a few students and their classes
 
+![picture](./dataModel.png)
 
 ### Query that I thought it did well on
 __________
