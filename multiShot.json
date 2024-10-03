@@ -1,0 +1,20 @@
+{
+  "exampleQueriesAndCorrectSQL": [
+    {
+      "query": "Can you tell me about the MARB building?",
+      "correctSQL": "SELECT building_description\nFROM building\nWHERE building_abbreviation = 'MARB';"
+    },
+    {
+      "query": "Which classes is John Doe enrolled in?",
+      "correctSQL": "SELECT c.class_id, c.class_code, c.class_name\nFROM student s\nJOIN enrollment e ON s.student_id = e.student_id\nJOIN class c ON e.class_id = c.class_id\nWHERE s.student_name = 'John Doe';"
+    },
+    {
+      "query": "Which student is enrolled in the most classes?",
+      "correctSQL": "SELECT s.student_id, s.student_name, COUNT(e.class_id) AS class_count\nFROM student s\nJOIN enrollment e ON s.student_id = e.student_id\nGROUP BY s.student_id, s.student_name\nORDER BY class_count DESC\nLIMIT 1;"
+    },
+    {
+      "query": "What are the names of students who have classes at the building with the abbreviation JKB?",
+      "correctSQL": "SELECT s.student_name\nFROM student s\nJOIN enrollment e ON s.student_id = e.student_id\nJOIN class c ON e.class_id = c.class_id\nJOIN class_building cb ON c.class_id = cb.class_id\nJOIN building b ON cb.building_id = b.building_id\nWHERE b.building_abbreviation = 'JKB';"
+    }
+  ]
+}
