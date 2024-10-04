@@ -40,3 +40,5 @@ __________
 I found that gpt-4o-mini worked quite well when it was given simple queries or if it had an abstract question with similar questions asked. This could work for non-engineers if they are traveling the "happy path" of queries, but otherwise I would be hesitant to trust the data that is being retrieved. 
 
 
+### Other 6 Examples
+[Examples](./examples.md)
